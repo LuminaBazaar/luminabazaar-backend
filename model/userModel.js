@@ -1,6 +1,8 @@
 const { Schema, model } = require("mongoose");
 const jwt = require("jsonwebtoken");
 
+const secretOrPrivateKey = 'your_secret_key_here';
+
 const userSchema = new Schema({
     name: { type: String, minLength: 4, required: true },
     email: { type: String, unique: true, required: true },
@@ -16,7 +18,7 @@ userSchema.methods.genToken = async function () {
             email: this.email,
             role: this.role,
         },
-        process.env.SECRETKEY
+        secretOrPrivateKey
     );
     return token;
 };
