@@ -12,8 +12,6 @@ const signIn = async (req, res) => {
 
         const token = await user.genToken();
 
-        console.log(user);
-        console.log(token);
         res.send({
             message: "Successfully signed in.",
             token: token,
