@@ -9,7 +9,7 @@ const userSchema = new Schema({
 });
 
 userSchema.methods.genToken = async function () {
-    const token = await jwt.sign(
+    const token =  jwt.sign(
         {
             id: this._id,
             name: this.name,
