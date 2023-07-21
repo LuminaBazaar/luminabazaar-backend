@@ -31,8 +31,8 @@ router.post("/create-checkout-session", authorize, async (req, res) => {
         line_items,
         mode: "payment",
         customer: customer.id,
-        success_url: `http://localhost:3000/#/complete?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `http://localhost:3000/#/cart`,
+        success_url: `https://luminabazaar.github.io/#/complete?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `https://luminabazaar.github.io/#/cart`,
     });
     // res.redirect(303, session.url);
     res.send({ url: session.url });
