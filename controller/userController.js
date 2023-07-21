@@ -11,6 +11,9 @@ const signIn = async (req, res) => {
             return res.status(404).send("invalid email or password!");
 
         const token = await user.genToken();
+
+        console.log(user);
+        console.log(token);
         res.send({
             message: "Successfully signed in.",
             token: token,
